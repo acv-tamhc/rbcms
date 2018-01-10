@@ -1,1 +1,22 @@
-<h1>This is new</h1>
+<div class="box box-content">
+	<div class="box-form">
+		<form class="form" method="post" action="http://localhost:3000/admin/posts/create">
+			<div class="box-form-title"><% yield :title %></div>
+			<div class="form-group">
+				<label>Name: </label>
+				<input type="text" name="name" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Link: </label>
+				<input type="text" name="friendly_link" class="form-control">
+			</div>
+			<div class="form-group">
+				<label>Content: </label>
+				<textarea name="content" class="form-control"></textarea>
+			</div>
+			<div class="form-group">
+				<input type="submit" name="btn_submit" value="Send">
+			</div>
+		</form>
+	</div>
+</div>

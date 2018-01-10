@@ -1,6 +1,7 @@
 require_relative 'boot'
 
 require 'rails/all'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -15,6 +16,7 @@ module Rbcms
     # -- all .rb files in that directory are automatically loaded.
     config.generators do |g|
     	g.assets false
+
     end
   end
 end

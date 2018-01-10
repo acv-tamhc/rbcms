@@ -6,6 +6,7 @@ module Admin
     end
 
     def new
+        @title = 'Add New Post'
 
     end
 
@@ -13,7 +14,8 @@ module Admin
 
     end
     def create
-
+        require 'awesome_print'
+        
     end
 
     def show

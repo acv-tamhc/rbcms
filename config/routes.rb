@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 	# You can have the root of your site routed with "root"
 	root 'admin#index'
 	# Example regular route
-	# get 'abput' => 'page#about'
+	namespace :admin do
+		resources :posts, :comments
+	end
+	# get 'about' => 'page#about'
 	get 'about' => 'about#index'
+
 
 	resources :posts
 	resources :articles

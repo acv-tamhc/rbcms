@@ -1,0 +1,10 @@
+<h1>Add New Product </h1>
+<%= simple_form_for @product do |f| %>
+<%= f.input :title, placeholder: 'Enter product title' %>
+<%= f.input :description, placeholder: 'Enter product description' %>
+<%= f.input :published, checked_value: 1 %>
+<%= f.input :level, prompt: 'Select a level' %>
+<%= f.input :price, placeholder: 'Enter price' %>
+<%= f.association :category, prompt: 'Select a category' %>
+<%= f.submit :submit %>
+<% end %>

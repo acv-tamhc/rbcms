@@ -1,0 +1,45 @@
+<div class="box box-page">
+	<div class="navigation">
+		<div class="list_item list_nav">
+			<div class="item"><%= link_to('Manage', products_path) %></div>
+			<div class="item"><%= link_to('Manage Trash', products_path) %></div>
+			<div class="item"><%= link_to('Add', new_product_path) %></div>
+		</div>
+	</div>
+	<div class="box-title">
+		<span>Manage product</span>
+	</div>
+	<div class="box-content">
+		<div class="table">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Country</th>
+						<th>Price</th>
+						<th>Published</th>
+						<th>Category</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @products.each do |product| %>
+						<tr>
+							<td><%= link_to(product.title, product_path(product)) %></td>
+							<td><%= product.description %></td>
+							<td><%= product.country %></td>
+							<td><%= product.price %></td>
+							<td><%= product.published %></td>
+							<td><%= product.category.try(:title) %></td>
+							<td>
+								<%= link_to('Edit', edit_product_path(product)) %>
+								<%= link_to('Remove', product_path(product), method: :delete, data: { confirm: 'Are you sure want to delete this product?'}) %>
+							</td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

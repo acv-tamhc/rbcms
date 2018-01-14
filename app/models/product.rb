@@ -1,7 +1,7 @@
 class Product < ApplicationRecord
 	extend Enumerize
 
-	belong_to :category, optional: true
+	belongs_to :category, optional: true
 
 	validates :title, :description, presence: true
 	validates :price, numericality: { greater_than: 0 }, presence: true

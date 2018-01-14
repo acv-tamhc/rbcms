@@ -17,6 +17,11 @@
     </div>
     <div class="side_menu">This is side menu</div>
     <div class="page_content">
+      <div class="content_message">
+        <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name %>
+        <% end %>
+      </div>
       <%= content_for?(:content) ? yield(:content) : yield %>
     </div>
   </body>
